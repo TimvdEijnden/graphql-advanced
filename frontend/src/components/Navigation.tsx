@@ -10,6 +10,9 @@ const Navigation = () => {
         <li>
           <Link to="/products">Products</Link>
         </li>
+        <li>
+          <Link to="/add-product">Add product</Link>
+        </li>
       </ul>
     </nav>
   );

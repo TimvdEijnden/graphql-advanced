@@ -7,17 +7,35 @@ export const resolvers = {
   },
   Category: {
     products: async (category) => {
-      console.log('[Category products]', category);
+      console.log("[Category products]", category);
 
-      return (await ProductModel.find()).filter((product) =>
-        product.categories.includes(category.categoryId)
-      ) ?? null;
-    }
+      return (
+        (await ProductModel.find()).filter((product) =>
+          product.categories.includes(category.categoryId)
+        ) ?? null
+      );
+    },
   },
   Product: {
     categories: async (product) => {
-      console.log('[Product categories]', product);
-      return product.categories.map((categoryId) => ({ __typename: 'Category', categoryId }));
-    }
-  }
+      console.log("[Product categories]", product);
+      return product.categories.map((categoryId) => ({
+        __typename: "Category",
+        categoryId,
+      }));
+    },
+  },
+  Mutation: {
+    createProduct: async (_, input) => {
+      const doc = {
+        name: input.name,
+        price: input.price,
+        image: input.image,
+        categories: [input.categoryId],
+      };
+      const product = await new ProductModel(doc).save();
+
+      return product;
+    },
+  },
 };

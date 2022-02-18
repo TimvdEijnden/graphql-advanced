@@ -9,6 +9,8 @@ import {
 import Products from "./components/Products";
 import Product from "./components/Product";
 import Navigation from "./components/Navigation";
+import AddProduct from "./components/AddProduct";
+
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
           <Route path="products" element={<Products />} />
           <Route path="products/:productId" element={<Product />} />
           <Route path="categories" element={<Categories />} />
+          <Route path="add-product" element={<AddProduct />} />
         </Routes>
         </div>
       </Router>

@@ -3,6 +3,10 @@ type Query {
   product(id: ID!): Product
 }
 
+type Mutation {
+  createProduct(name: String!, price: Float!, image: String!, categoryId: Int!): Product
+}
+
 type Product @key(fields: "categories") {
   id: ID!
   name: String
@@ -12,6 +16,6 @@ type Product @key(fields: "categories") {
 }
 
 extend type Category @key(fields: "categoryId") {
-  categoryId: Int @external
+  categoryId: Int! @external
   products: [Product]
 }

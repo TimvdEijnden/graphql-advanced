@@ -18,6 +18,7 @@ const Product = () => {
       <h1>{data?.product?.name}</h1>
       <pre>€ {data?.product?.price}</pre>
       <img src={data?.product?.image!} alt={data?.product?.name!} />
+      {/* TODO: show categories */}
     </>
   );
 };

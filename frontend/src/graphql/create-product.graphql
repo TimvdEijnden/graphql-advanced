@@ -1,0 +1,13 @@
+mutation CreateProduct($categoryId: Int!, $image: String!, $name: String!, $price: Float!) {
+  createProduct(categoryId: $categoryId, image: $image, name: $name, price: $price) {
+    categories {
+      categoryId
+      id
+      name
+    }
+    id
+    image
+    name
+    price
+  }
+}

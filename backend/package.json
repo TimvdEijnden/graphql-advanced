@@ -27,7 +27,7 @@
   },
   "scripts": {
     "start": "concurrently 'npm run generate-types:*' 'npm run dev:product' 'npm run dev:category' 'npm run dev:gateway'",
-    "dev:gateway": "wait-on tcp:4101 tcp:4102 && nodemon --watch 'gateway/**/*.*' -e ts,gql --exec 'ts-node' --files -r ./gateway/index.ts",
+    "dev:gateway": "wait-on tcp:4101 tcp:4102 && nodemon --watch '**/types.ts' -e ts,gql --exec 'ts-node' --files -r ./gateway/index.ts",
     "dev:product": "nodemon --watch 'product-service/**/*.*' -e ts,gql --exec 'ts-node' --files -r ./product-service/server.ts",
     "dev:category": "nodemon --watch 'category-service/**/*.*' -e ts,gql --exec 'ts-node' --files -r ./category-service/server.ts",
     "generate-types": "npm run generate-types:product && npm run generate-types:category",
