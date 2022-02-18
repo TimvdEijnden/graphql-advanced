@@ -1,0 +1,15 @@
+schema: product-service/schema.gql
+generates:
+  product-service/types.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-resolvers
+    config:
+      federation: true
+      mappers:
+        Product: ./models#ProductModel
+watch: true
+hooks:
+  afterOneFileWrite:
+    - npx prettier --write

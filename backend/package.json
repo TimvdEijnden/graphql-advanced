@@ -1,0 +1,37 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "author": "Tim van den Eijnden",
+  "license": "ISC",
+  "description": "graphql backend",
+  "main": "src/index.ts",
+  "dependencies": {
+    "@apollo/federation": "^0.33.9",
+    "@apollo/gateway": "^0.46.0",
+    "apollo-server": "^3.6.2",
+    "graphql": "^15.8.0",
+    "graphql-import-node": "^0.0.4"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "2.3.1",
+    "@graphql-codegen/introspection": "2.1.1",
+    "@graphql-codegen/typescript": "2.4.2",
+    "@graphql-codegen/typescript-operations": "^2.2.2",
+    "@graphql-codegen/typescript-resolvers": "2.4.3",
+    "concurrently": "^7.0.0",
+    "mongoose": "^6.1.7",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4",
+    "wait-on": "^6.0.0"
+  },
+  "scripts": {
+    "start": "concurrently 'npm run generate-types:*' 'npm run dev:product' 'npm run dev:category' 'npm run dev:gateway'",
+    "dev:gateway": "wait-on tcp:4101 tcp:4102 && nodemon --watch 'gateway/**/*.*' -e ts,gql --exec 'ts-node' --files -r ./gateway/index.ts",
+    "dev:product": "nodemon --watch 'product-service/**/*.*' -e ts,gql --exec 'ts-node' --files -r ./product-service/server.ts",
+    "dev:category": "nodemon --watch 'category-service/**/*.*' -e ts,gql --exec 'ts-node' --files -r ./category-service/server.ts",
+    "generate-types": "npm run generate-types:product && npm run generate-types:category",
+    "generate-types:product": "graphql-codegen --config product-service/codegen.yml",
+    "generate-types:category": "graphql-codegen --config category-service/codegen.yml"
+  }
+}

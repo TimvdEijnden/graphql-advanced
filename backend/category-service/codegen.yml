@@ -1,0 +1,15 @@
+schema: category-service/schema.gql
+generates:
+  category-service/types.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-resolvers
+    config:
+      federation: true
+      mappers:
+        category: ./models#categoryModel
+watch: true
+hooks:
+  afterOneFileWrite:
+    - npx prettier --write

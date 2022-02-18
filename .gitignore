@@ -1,0 +1,4 @@
+**/node_modules
+
+# generate types
+**/types.ts

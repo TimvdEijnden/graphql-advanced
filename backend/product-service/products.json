@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "name": "Conimex Kroepoek Java",
+        "image": "https://static-images.jumbo.com/product_images/021220210919_456997ZK-1_360x360_2.png",
+        "price": 1.48,
+        "categories": [1]
+    },
+    {
+        "id": 2,
+        "name": "Cheetos Nibb-it Sticks Naturel Chips",
+        "image": "https://static-images.jumbo.com/product_images/050220210418_196235STK-1_360x360_2.png",
+        "price": 2.12,
+        "categories": [1]
+    },
+    {
+        "id": 3,
+        "name": "Chio Heartbreakers Classic",
+        "image": "https://static-images.jumbo.com/product_images/160420210008_170458ZK-1_360x360_2.png",
+        "price": 1.44,
+        "categories": [1]
+    },
+    {
+        "id": 4,
+        "name": "Bloemkool",
+        "image": "https://static-images.jumbo.com/product_images/210820192223_302249STK-1_360x360_2.png",
+        "price": 1.99,
+        "categories": [2]
+    },
+    {
+        "id": 5,
+        "name": "Uien",
+        "image": "https://static-images.jumbo.com/product_images/030820190457_213007NET-1_360x360_2.png",
+        "price": 0.85,
+        "categories": [2]
+    },
+    {
+        "id": 6,
+        "name": "Tomaten",
+        "image": "https://static-images.jumbo.com/product_images/150120211547_311669BAK-1_360x360_2.png",
+        "price": 1.29,
+        "categories": [2]
+    },
+    {
+        "id": 7,
+        "name": "Calvé Smeuïge Pindakaas Regular",
+        "image": "https://static-images.jumbo.com/product_images/091120211508_216438STK-1_360x360_2.png",
+        "price": 2.85,
+        "categories": [3]
+    },
+    {
+        "id": 8,
+        "name": "Jumbo Hagelslag Melk",
+        "image": "https://static-images.jumbo.com/product_images/010120210440_192487DS-1_360x360_2.png",
+        "price": 1.99,
+        "categories": [3]
+    },
+    {
+        "id": 9,
+        "name": "Jumbo Volkoren Beschuit 13 Stuks",
+        "image": "https://static-images.jumbo.com/product_images/271120190431_290515STK-1_360x360_2.png",
+        "price": 0.69,
+        "categories": [3]
+    }
+]
