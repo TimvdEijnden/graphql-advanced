@@ -1,9 +1,13 @@
-import { ProductModel } from "./models";
+import {
+  ProductModel,
+  Availability
+} from "./models";
 
 export const resolvers = {
   Query: {
     products: async () => await ProductModel.find(),
     product: async (_, { id }) => await ProductModel.findById(id),
+    // availableProducts: async () => await ProductModel.find({ availability: Availability.IN_STOCK }),
   },
   Category: {
     products: async (category) => {
@@ -20,7 +24,6 @@ export const resolvers = {
     categories: async (product) => {
       console.log("[Product categories]", product);
       return product.categories.map((categoryId) => ({
-        __typename: "Category",
         categoryId,
       }));
     },

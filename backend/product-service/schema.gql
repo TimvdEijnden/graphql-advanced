@@ -1,10 +1,22 @@
 type Query {
+  """
+  Fetch all products
+  """
   products: [Product]
+  """
+  Fetch product by id
+  """
   product(id: ID!): Product
+  # availableProducts: [Product]
 }
 
 type Mutation {
-  createProduct(name: String!, price: Float!, image: String!, categoryId: Int!): Product
+  createProduct(
+    name: String!
+    price: Float!
+    image: String!
+    categoryId: Int!
+  ): Product
 }
 
 type Product @key(fields: "categories") {
@@ -13,7 +25,14 @@ type Product @key(fields: "categories") {
   image: String
   price: Float
   categories: [Category]
+  # availability: Availability!
 }
+
+# enum Availability {
+#   IN_STOCK
+#   TEMPORARILY_UNAVAILABLE
+#   OUT_OF_ASSORTMENT
+# }
 
 extend type Category @key(fields: "categoryId") {
   categoryId: Int! @external

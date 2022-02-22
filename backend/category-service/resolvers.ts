@@ -3,7 +3,7 @@ import { CategoryModel } from "./models";
 export const resolvers = {
   Query: {
     categories: async () => await CategoryModel.find(),
-    category: async (_, { id }) => await CategoryModel.findById(id),
+    category: async (_, { categoryId }) => await CategoryModel.findOne({ categoryId }),
   },
   Category: {
     __resolveReference: async (category) => {
